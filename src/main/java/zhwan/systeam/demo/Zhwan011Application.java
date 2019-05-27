@@ -15,13 +15,12 @@ public class Zhwan011Application {
         ConfigurableApplicationContext ctx = SpringApplication.run(Zhwan011Application.class, args);
         PlantInventoryEntryRepository repository = ctx.getBean(PlantInventoryEntryRepository.class);
 
+
         PlantInventoryEntry plant = new PlantInventoryEntry();
         plant.setName("Bike");
         plant.setDescription("Nice and shiny");
         plant.setPrice(BigDecimal.valueOf(100));
-
         repository.save(plant);
-
         System.out.println(repository.findAll());
 
     }
